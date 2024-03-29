@@ -1,119 +1,40 @@
-<img src="https://i.ibb.co/rswhrqF/site.jpg" alt="screenshot">
+![screenshot](https://i.ibb.co/rswhrqF/site.jpg)
 
-# Class 45 Group-A final project
+# Class 45 Group-A Final Project
 
 This is the final project for the HackYourFuture curriculum we did as a class using the MERN stack by following the agile methodology with our team and a group of mentors. A quick guide to what we built:
 
-# Delivery Application ( Just like the others, but better...)
+## Delivery Application (Just like the others, but better...)
 Introducing our revolutionary web app where convenience meets efficiency! Sign up either as a client or a driver to experience seamless delivery services like never before. Clients can effortlessly make delivery requests from one address to another, while drivers stationed at the pick-up address can swiftly accept these requests and ensure timely delivery of packages to their final destinations. Say goodbye to delivery hassles and embrace a streamlined solution with our user-friendly platform.
 
 [Check out our app here!](https://c45-group-a-fa2205e3b8c2.herokuapp.com/)
 
-## 1. Setup
+### What you can do with our app:
+1. **Sign up** either as a 'Client' or 'Driver'.
+   - If you signed up as a 'Driver':
+     1. You can set your status online whenever you want to work.
+     2. When you are set online you are eligible to be assigned to a delivery in your town by a client.
+     3. You can either accept or reject this delivery after you check the details.
+     4. If you accept the delivery you are responsible to take the delivery from the pick-up location to the drop-off location.
+     5. You must update delivery status for the client to see on the website (Picked Up-Delivered).
+     6. When you are done with the delivery and set it is delivered, you are able to accept other deliveries which are assigned to you.
 
-First, to setup all the directories run the following in the main directory:
+   - If you signed up as a 'Client':
+     1. You can create a delivery request by filling the form.
+     2. If you make a mistake with the addresses, our application will be aware of that and it will ask you to check the wrong address (checked by zipcode and house number).
+     3. After you created the form you will be able to see the calculated cost of your delivery (Calculated by the size and the distance - automatically calculated distance between addresses by our application).
+     4. If you are okay with the cost of the delivery, you will be redirected to the payment page.
+     5. If the payment is successful, you will see the list of available drivers in your delivery's pick-up city.
+     6. You will see the rating and the other details of the drivers and be able to choose one you want.
+     7. If the driver accepts the delivery, he will take it from the pick-up address to the drop-off address.
+     8. You will be able to see the current status of delivery (Pending-Picked).
+     9. If the delivery is delivered to the address you will be able to set the status as 'Delivered'.
+     10. After the delivery is completed you can rate the process.
 
-`npm install`
-
-`npm run setup`
-
-The first command will install `cypress` and some small libraries needed for running the rest of the commands. The second will go into the `client` and `server` directories and set those up to be ran.
-
-In the `client` and `server` directory there are two `.env.example` files. Create a copy and rename that to `.env`. Then follow the instructions in those files to fill in the right values.
-
-To run the app in dev mode you can run the following command in the main directory:
-
-`npm run dev`
-
-## 2. Code structure
-
-```
-client
-├── public
-└── src
-|   └── __tests__
-|   └── __testUtils__
-|   └── components
-|   └── hooks
-|   └── pages
-|       └── __tests__
-|       └── components
-|   └── util
-|   index.jsx
-cypress
-|   └── fixtures
-|   └── integration
-|   └── plugins
-|   └── support
-server
-└── src
-    └── __tests__
-    └── __testUtils__
-    └── controllers
-    └── db
-    └── models
-    └── routes
-    └── util
-    index.js
-```
-
-### 2.1 Client structure
-
-- `public` || public facing client code
-- `__tests__` || any `jest` tests for specific components will be in a `__tests__` folder on the same level
-- `__testUtils__` || any code that is only being used in the tests is put in the `__testUtils__` folder to separate that away from the rest of the code
-- `components` || all of our shared components that are used over multiple pages
-- `hooks` || all of our custom hooks
-- `pages` || the page components of our app, any routing will go between these components
-- `pages/components` || components used specifically on those pages
-- `util` || any utility functions that can be used anywhere on the client side
-- `index.jsx` || the start point of the client
-
-### 2.2 Cypress structure
-
-- `fixtures` || any data/files that `cypress` needs can be placed here
-- `integration` || all of our tests are in here, separated in folders based on the pages in our app
-- `plugins` || any plugins for our `cypress` configuration can be placed here
-- `support` || custom commands and other support files for `cypress` can be placed here
-
-### 2.3 Server structure
-
-- `__tests__` || any `jest` tests for the api endpoints as that is our testing strategy for the backend
-- `__testUtils__` || any code that is only being used in the tests is put in the `__testUtils__` folder to separate that away from the rest of the code
-- `controllers` || all of our controller functions that interact with the database
-- `db` || all of our configuration for the database
-- `models` || all of our `mongoose` models will be placed here
-- `routes` || code to match up the API with our controllers
-- `util` || any utility functions that can be used anywhere on the server side
-- `index.js` || the start point of the server
-
-## 3. Stack / external libraries
-
-The base stack of the app is a MERN stack (Mongoose, Express, React, Node). Next to that we make use of the following extras:
-
-### 3.1 Configuration libraries
-
-- `dotenv` || To load the .env variables into the process environment. See [docs](https://www.npmjs.com/package/dotenv)
-- `webpack` / `html-webpack-plugin` || To bundle our React app and create a static app to host. See [docs](https://webpack.js.org/)
-- `husky` || To run our tests and linter before committing. See [docs](https://typicode.github.io/husky/#/)
-- `eslint` || To check our code. We have different configurations for frontend and backend. You can check out the configuration in the `.eslintrc.(c)js` files in the respective `client` and `server` folders. See [docs](https://eslint.org/)
-- `prettier` || To automatically format our code. See [docs](https://prettier.io/)
-- `concurrently` || To run commands in parallel. See [docs](https://github.com/open-cli-tools/concurrently#readme)
-
-For more information on how these work together including the automatic deployment to heroku, have a look at our detailed [DEV](./DEV.md) file.
-
-### 3.2 Client-side libraries
-
-- `@testing-library/*` || We use React Testing Library to write all of our tests. See [docs](https://testing-library.com/docs/react-testing-library/intro/)
-- `jest` || To run our tests and coverage. See [docs](https://jestjs.io/)
-- `jest-fetch-mock` || To mock out the backend for our testing purposes. See [docs](https://github.com/jefflau/jest-fetch-mock#readme)
-- `prop-types` || To type-check our components. See [docs](https://github.com/facebook/prop-types)
-
-### 3.3 Server-side libraries
-
-- `nodemon` || To automatically restart the server when in development mode. See [docs](https://nodemon.io/)
-- `jest` || To run our tests and coverage. See [docs](https://jestjs.io/)
-- `supertest` || To more easily test our endpoints. See [docs](https://github.com/visionmedia/supertest#readme)
-- `mongodb-memory-server` || To mock out our database in our backend tests. See [docs](https://github.com/nodkz/mongodb-memory-server)
-- `cors` || To open up our API. See [docs](https://github.com/expressjs/cors#readme)
-- `mongoose` || To add schemas to our database. See [docs](https://mongoosejs.com/)
+### Used Technologies:
+<img src="https://raw.githubusercontent.com/llanojs/Readme_template/master/react-logo.jpg" alt="react" width="100"> 
+<img src="https://cdn-clekk.nitrocdn.com/tkvYXMZryjYrSVhxKeFTeXElceKUYHeV/assets/images/optimized/rev-49e2c5e/litslink.com/wp-content/uploads/2020/12/node.js-logo-image.png" alt="node" width="100"> 
+<img src="https://mma.prnewswire.com/media/384058/MongoDB_Logo.jpg?p=facebook" alt="mongo" width="100"> 
+<img src="https://miro.medium.com/v2/resize:fit:1400/1*_6ooq0R60ba3UT5c-QVemA.png" alt="tailwind" width="100"> 
+<img src="https://searchengineland.com/wp-content/seloads/2015/07/bing-maps-word5-ss-1920.png" alt="bing" width="100"> 
+<img src="https://www.postcodeapi.nu/assets/schema-logo.png" alt="postcode" width="100"> 
