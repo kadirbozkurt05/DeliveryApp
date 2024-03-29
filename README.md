@@ -32,9 +32,5 @@ Introducing our revolutionary web app where convenience meets efficiency! Sign u
      10. After the delivery is completed you can rate the process.
 
 ### Used Technologies:
-<img src="https://raw.githubusercontent.com/llanojs/Readme_template/master/react-logo.jpg" alt="react" width="100"> 
-<img src="https://cdn-clekk.nitrocdn.com/tkvYXMZryjYrSVhxKeFTeXElceKUYHeV/assets/images/optimized/rev-49e2c5e/litslink.com/wp-content/uploads/2020/12/node.js-logo-image.png" alt="node" width="100"> 
-<img src="https://mma.prnewswire.com/media/384058/MongoDB_Logo.jpg?p=facebook" alt="mongo" width="100"> 
-<img src="https://miro.medium.com/v2/resize:fit:1400/1*_6ooq0R60ba3UT5c-QVemA.png" alt="tailwind" width="100"> 
-<img src="https://searchengineland.com/wp-content/seloads/2015/07/bing-maps-word5-ss-1920.png" alt="bing" width="100"> 
-<img src="https://www.postcodeapi.nu/assets/schema-logo.png" alt="postcode" width="100"> 
+<img src="https://raw.githubusercontent.com/llanojs/Readme_template/master/react-logo.jpg" alt="react" width="100">     <img src="https://cdn-clekk.nitrocdn.com/tkvYXMZryjYrSVhxKeFTeXElceKUYHeV/assets/images/optimized/rev-49e2c5e/litslink.com/wp-content/uploads/2020/12/node.js-logo-image.png" alt="node" width="100">     <img src="https://mma.prnewswire.com/media/384058/MongoDB_Logo.jpg?p=facebook" alt="mongo" width="100">     <img src="https://miro.medium.com/v2/resize:fit:1400/1*_6ooq0R60ba3UT5c-QVemA.png" alt="tailwind" width="100"> 
+    <img src="https://searchengineland.com/wp-content/seloads/2015/07/bing-maps-word5-ss-1920.png" alt="bing" width="100">     <img src="https://www.postcodeapi.nu/assets/schema-logo.png" alt="postcode" width="100"> 
